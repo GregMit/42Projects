@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memmalloc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:58 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/08 17:15:00 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/09 00:05:45 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/09 14:37:29 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memalloc(size_t size)
 {
-	if (c >= 0 && c <= 9)
-		return (1);
-	else
-		return (0);
+	void	*mem;
+
+	if (!mem = (void*)malloc(sizeof(void) * size))
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:58 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/08 17:15:00 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/06 16:20:38 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/08 23:17:30 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strncpy(char *dst, char *src, size_t len)
 {
-	if (c >= 0 && c <= 9)
-		return (1);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	if (i == len)
+		return (dst);
+	return (dst);
 }

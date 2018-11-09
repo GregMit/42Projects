@@ -1,6 +1,16 @@
-//#include "libft.h"
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/08 17:13:55 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/08 22:18:31 by glamit           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -11,16 +21,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	d = (char *)dst;
 	s = (const char *)src;
-	while ()
-}
-int main () 
-{
-   char dest[] = "stringasdfasdf";
-   const char src[]  = "newstring";
-
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 9);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
-   return(0);
+	while (i < len)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }
