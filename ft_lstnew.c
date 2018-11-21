@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 22:36:50 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/20 17:07:19 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/21 21:35:47 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,14 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(new->content = malloc(content_size)))
+		{
+			free(new);
 			return (NULL);
+		}
 		ft_memcpy(new->content, content, content_size);
 		new->content_size = content_size;
 	}
+
 	new->next = NULL;
 	return (new);
 }
