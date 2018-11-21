@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:47:43 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/17 18:12:05 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/14 15:08:51 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/21 20:54:26 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*str;
-	int		len;
-	int		sign;
+	t_list *new;
+	t_list *ptr;
+	t_list *tmp;
 
-	len = ft_intlen(n);
-	sign = 1;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		sign *= -1;
-		n *= -1;
-	}
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!lst || !f)
 		return (NULL);
-	str[len] = '\0';
-	while (len--)
+	tmp = f(lst);
+	if (!(new = ft_lstnew(tmp->content, tmp->content_size)))
+		return (NULL);
+	ptr = new;
+	lst = lst->next;
+	while (lst)
 	{
-		str[len] = n % 10 + '0';
-		n /= 10;
+		tmp = f(lst);
+		if (!(new->next = ft_lstnew(tmp->content, tmp->content_size)))
+			return (NULL);
+		new = new->next;
+		lst = lst->next;
 	}
-	if (sign == -1)
-		str[0] = '-';
-	return (str);
+	new->next = NULL;
+	return (ptr);
 }

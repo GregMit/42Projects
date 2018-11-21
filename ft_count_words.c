@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/17 18:14:13 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/18 19:33:25 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int		ft_count_words(const char *s, char c)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	k;
+
+	i = 0;
+	k = 0;
+	while (s[i] != '\0')
+	{
+		if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == '\0'))
+			k++;
+		i++;
+	}
+	return (k + 1);
 }

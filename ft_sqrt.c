@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/18 18:42:06 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/18 18:57:34 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+double	ft_sqrt(double x)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
+	double i;
+
+	i = 0;
+	while ((i * i) < x)
+		i++;
+	if ((i * i) == x)
+		return (i);
 	else
 		return (0);
 }

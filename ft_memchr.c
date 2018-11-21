@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:36:53 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/08 22:17:07 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/14 20:03:24 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char 	a;
+	unsigned char	a;
 	unsigned char	*str;
 
 	a = (unsigned char)c;
@@ -23,8 +23,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (*str != a)
 			str++;
-		else
+		else if (*str == a)
 			return (str);
+		n--;
 	}
 	return (NULL);
 }

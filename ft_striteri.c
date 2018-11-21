@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:20:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/09 15:33:03 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:51:40 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s == NULL || f == NULL)
+		return ;
+	while (*s)
 	{
-		(*f)(s[i]);
+		(*f)(i, s);
 		i++;
+		s++;
 	}
 }

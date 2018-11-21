@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:44:02 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/09 14:48:21 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:47:43 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strclr(char *s)
 {
-	ft_memset(s, '\0', ft_strlen(s));
+	if (s != NULL)
+		ft_memset(s, '\0', ft_strlen(s));
 }

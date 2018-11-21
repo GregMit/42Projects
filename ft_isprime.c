@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/19 16:38:48 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/19 16:42:33 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int		ft_isprime(int nb)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
-	else
+	int	i;
+
+	i = 2;
+	if (nb < 2)
 		return (0);
+	while (i < 50000 && i < nb)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }

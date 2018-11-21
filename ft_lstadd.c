@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/14 13:44:33 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/15 15:17:52 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
-	else
-		return (0);
+	new->next = *alst;
+	*alst = new;
 }

@@ -1,21 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_count_word_letters.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/17 18:14:30 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/20 18:34:35 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_count_word_letters(const char *s, char c, char **tab)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	letters;
+	int	k;
+
+	i = 0;
+	k = 0;
+	if (s == NULL)
+		return ;
+	while (s[i])
+	{
+		letters = 0;
+		while (s[i] != '\0' && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			letters++;
+		}
+		if (letters == 0)
+			break ;
+		if (!(tab[k] = (char *)malloc(sizeof(char) * (letters + 1))))
+			return ;
+		tab[k++][letters] = '\0';
+	}
+	tab[k] = NULL;
 }

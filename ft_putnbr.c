@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 17:59:47 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/09 18:06:36 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/15 14:24:15 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	if(n == -2147483648)
+	if (n == -2147483648)
 	{
 		ft_putchar('-');
 		ft_putchar('2');
@@ -27,5 +27,5 @@ void	ft_putnbr(int n)
 	}
 	if (n >= 10)
 		ft_putnbr(n / 10);
-	ft_putchar(nb % 10 + '0');
+	ft_putchar(n % 10 + '0');
 }

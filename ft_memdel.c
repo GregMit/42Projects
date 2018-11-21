@@ -6,13 +6,13 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:57:26 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/09 14:43:29 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/14 20:42:33 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void	**ap)
+void	ft_memdel(void **ap)
 {
 	free(*ap);
 	*ap = NULL;

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_split_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:14:21 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/19 16:51:07 by glamit           ###   ########.fr       */
+/*   Created: 2018/11/17 18:15:13 by glamit            #+#    #+#             */
+/*   Updated: 2018/11/20 18:34:40 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	**ft_split_words(const char *s, char c, char **tab)
 {
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	k = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		while (s[i] != '\0' && s[i] == c)
+			i++;
+		while (s[i] != '\0' && s[i] != c)
+			tab[k][j++] = s[i++];
+		k++;
+	}
+	return (tab);
 }

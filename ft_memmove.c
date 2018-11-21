@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:13:55 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/08 22:18:31 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/21 21:05:12 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*d;
-	const char	*s;
-	size_t		i;
+	char	*s;
+	char	*d;
 
-	i = 0;
+	s = (char *)src;
 	d = (char *)dst;
-	s = (const char *)src;
-	while (i < len)
+	if (s < d)
 	{
-		d[i] = s[i];
-		i++;
+		while (len-- > 0)
+			*(d + len) = *(s + len);
 	}
+	else
+		ft_memcpy(dst, s, len);
 	return (dst);
 }

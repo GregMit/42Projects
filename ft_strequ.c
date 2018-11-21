@@ -6,7 +6,7 @@
 /*   By: glamit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:36:25 by glamit            #+#    #+#             */
-/*   Updated: 2018/11/09 16:41:39 by glamit           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:57:37 by glamit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	while (*s1 != '\0' || *s2 != '\0')
+	if (s1 == NULL || s2 == NULL || ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	while (*s1 || *s2)
 	{
 		if (*s1 != *s2)
 			return (0);
